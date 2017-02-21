@@ -1,0 +1,23 @@
+{
+  "name": "mean-stack-application",
+  "version": "1.0.0",
+  "description": "test application to apply all these technologies together",
+  "main": "app.js",
+  "scripts": {
+    "start":"node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isuruAb/Node-JS-Angular-2-Mongo-DB-App.git"
+  },
+  "author": "Isuru Abeywardana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isuruAb/Node-JS-Angular-2-Mongo-DB-App/issues"
+  },
+  "homepage": "https://github.com/isuruAb/Node-JS-Angular-2-Mongo-DB-App#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
