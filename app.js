@@ -1,20 +1,24 @@
 var express = require('express')
-var MongoClient = require('mongodb').MongoClient;
-	var app = express()
-	app.get('/', function (req, res) {
-  		res.send('Hello World!')
+var app = express()
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect('mongodb://localhost:27017/mean_stack_app_db');
+
+mongoose.connection
+	.once('open', () => {
+		console.log('connectecd to db')
 	})
-	// Retrieve
+	.on('error', (err) => {
+		console.warn('Warning', err)
+	});
+app.get('/', function (req, res) {
+	res.send('Hello World!')
+})
+// Retrieve
 
 
-// Connect to the db
-MongoClient.connect("mongodb://localhost:27017/mean-stack-app-db", function(err, db) {
-  if(!err) {
-    console.log("We are connected");
-  }
-});
-	app.listen(3000, function () {
-  		console.log('Example app listening on port 3000!')
-	})
-
-
+app.listen(3000, function () {
+	console.log('Example app listening on port 3000!')
+})
